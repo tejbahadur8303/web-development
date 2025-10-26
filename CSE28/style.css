@@ -1,0 +1,44 @@
+ /* POPPINS FONT  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+    /* ==== GLOBAL STYLES ==== */
+ 
+ 
+ 
+ 
+ 
+ *{
+    margin: 9;
+    padding: 8;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+ } 
+ /* ==== COLOR VARIABLES ==== */  
+:root{
+    --primary-color: #c6c3c3;
+    --secondary-color: #ffffff;
+    --black-color: #000000;
+
+}
+body{
+    background-color: url("../img/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* ==== REUSABLE CSS ==== */
+a{
+    text-decoration: none;
+    color: var(--second-color);
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/* ==== WRAPPER ==== */
+.wrapper{
+    max-width: 100px;
+    display: flex;
+ justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
