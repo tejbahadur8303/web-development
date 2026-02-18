@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>E-Commerce style nav bar</title>
+    <style>
+      *{
+        margin:0px;
+        padding:0px;
+        font-family: sans-serif;
+        color:rgb(242, 239, 240);
+        font-size: 30px;
+      }
+      .main_box {
+       bg-color:url("photo.jpg")
+        height:100vh;
+        background-size:cover;
+      }
+      
+      
+      .btn_one {
+        font-weight: 700px;
+        font-size:30px ;
+        position:absolute;
+        left:16px;
+        line-height: 60px;
+        
+      }
+      .sidebar_menu {
+        position:fixed;
+        left:-350px;
+        height:100vh;
+        width:300px;
+        background-color: rgba(225, 225, 225,0.1);
+        box-shadow:  30px rgba(231, 235, 233, 0.1);
+      }
+      .sidebar_menu .logo {
+        position:absolute;
+        width:100%;
+        line-height:60px;
+        box-shadow:0 0 6px rgba(225, 225, 225,0.1)
+        
+      }
+      .sidebar_menu .logo a{
+        position:absolute;
+        left:40px;
+        bottom: -10px;
+        color:white;
+        text-decoration: none;
+
+      }
+      .sidebar_menu .btn_two {
+        font-size:25px;
+        line-height:60px;
+        position:absolute;
+        left:275px;
+        opacity: 0 px;
+        
+        
+      }
+      .sidebar_menu .menu {
+        position:absolute;
+        width:100%;
+        top:80px;
+      }
+      .sidebar_menu .menu li {
+        margin:6px;
+        padding:10px 20px;
+       
+      }
+      .sidebar_menu .menu li  :hover {
+        
+        box-shadow:0 0  20px rgba(211, 213, 211, 0.1);
+
+        
+ }
+
+
+      .sidebar_menu .menu i,a {
+        color:white;
+        text-decoration: none;
+        font-size:22px;
+      }
+
+
+      .sidebar_menu .menu i {
+        padding:5px;
+      }
+      .sidebar_menu .social_media {
+        color:white;
+        opacity:0.5;
+        position:absolute;
+        left:10%;
+        top:85%; }
+
+        #check {
+          display:none;
+        }
+
+        .btn_two i :hover {
+          font-size: 30px;
+        }
+        .btn_one i :hover {
+          font-size: 40px;
+        }
+        .sidebar_menu .social_media i :hover {
+          opacity: 1px;
+                  transform:scale(1.1);
+        }
+        #check:checked ~ .sidebar_menu {
+          left:0;
+        }
+         #toolbar {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 20px;  
+    border-bottom: 2px solid #121212;
+    padding: 10px;
+    background-color: black;
+}
+       </style>
+    
+  </head>
+  <body>
+    <div id="toolbar">
+        <a href="#" id="cart">Cart</a>
+        <i class="#"id="cart" ></i>
+        <a href="#" id="cart">Login</a>
+    </div>
+    <div class="main_box">
+      <input type="checkbox" id="check" />
+      <div class="btn_one">
+        <label for="check" style="color: rgb(5, 3, 3)">
+          <i class="#"></i>
+        </label>
+      </div>
+
+      <div class="sidebar_menu">
+        <div class="logo">
+          <a href="#" >ShopEase</a>
+        </div>
+
+        <div class="btn_two">
+          <label for="check" style="color: rgb(8, 1, 1)">
+            <i class="#"></i>
+          </label>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li>
+              <i class="#"></i>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <i class="#"></i>
+              <a href="#">Product</a>
+            </li>
+            <li>
+              <i class="#"></i>
+              <a href="#">Categories</a>
+            </li>
+            <li>
+              <i class="#"></i>
+              <a href="#">Deals</a>
+            </li>
+            <li>
+              <i class="#"></i>
+              <a href="#">Order</a>
+            </li>
+            <li>
+              <i class="#"></i>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <i class="#"> </i>
+              <a href="#" >Feedback</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="social_media">
+          <ul>
+            <a href="#"><i class="#></i></a>
+            <a href="#"><i class="#"></i></a>
+            <a href="#"><i class="#"></i></i></a>
+            <a href="#"><i class="#"></i></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
