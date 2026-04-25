@@ -1,0 +1,41 @@
+body{
+    text-align: center;
+}
+#simon{
+   
+    display:flex;
+    padding:10px;
+    margin:20px;
+    
+    justify-content: center;
+
+
+}
+.btn{
+    height:200px;
+    width: 200px;
+    border-radius: 50px;
+    border:10px solid black;
+    margin:10px;
+    padding:20px;
+
+}
+.red{
+    background-color: rgb(156, 87, 126);
+}
+.green{
+    background-color: rgb(75, 133, 156);
+}
+.yellow{
+    background-color: rgb(220, 140, 35);
+}
+.purple{
+    background-color: rgb(47, 116, 181);
+}
+.flash{
+    background-color: white;
+}
+.userflash{
+    background-color: green;
+}
+
