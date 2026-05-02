@@ -1,0 +1,103 @@
+<!doctype html> 
+<html> 
+  <head> 
+    <title>Student Result</title> 
+  </head> 
+  <body> 
+    <h2>Student Result Program</h2> 
+      <script> 
+      var subjects = prompt("Enter number of subjects"); 
+      var total = 0; 
+      for (var i = 1; i <= subjects; i++) { 
+        var marks = prompt("Enter marks of subject " + i); 
+        total = total + Number(marks); 
+      } 
+ var average = total / subjects; 
+  var grade; 
+      var result; 
+  if (average >= 60) { 
+        grade = "A"; 
+        result = "Pass"; 
+      } else if (average >= 50) { 
+        grade = "B"; 
+        result = "Pass"; 
+      } else if (average >= 40) { 
+        grade = "C"; 
+        result = "Pass"; 
+      } else { 
+        grade = "D"; 
+        result = "Fail"; 
+      } 
+      document.write("Total Marks = " + total); 
+      document.write("<br>"); 
+      document.write("Average Marks = " + average); 
+      document.write("<br>"); 
+      document.write("Grade = " + grade); 
+      document.write("<br>"); 
+      document.write("Result = " + result); 
+    </script> 
+  </body> 
+</html> 
+ 
+ 
+ 
+ 
+ 
+                                    
+ 
+ 
+ 
+ 
+                                                 
+ 
+ 
+ 
+ 
+ 
+2nd Method 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Student Result</title> 
+</head> 
+<body> 
+<h2>Student Result Program</h2> 
+Enter Number of Subjects: 
+<input type="number" id="sub"> 
+<button onclick="result()">Calculate</button> 
+<p id="output"></p> 
+<script> 
+function result(){ 
+var subjects = document.getElementById("sub").value; 
+var total = 0; 
+for(var i=1; i<=subjects; i++) 
+{ 
+} 
+var marks = prompt("Enter marks of subject " + i); 
+total = total + Number(marks); 
+var average = total / subjects; 
+var grade; 
+if(average >= 60) 
+{ 
+  grade = "A"; 
+} 
+else if(average >= 50) 
+{ 
+  grade = "B"; 
+} 
+else if(average >= 40) 
+{ 
+  grade = "C"; 
+} 
+else 
+{ 
+  grade = "D"; 
+} 
+document.getElementById("output").innerHTML = 
+"Total Marks = " + total + "<br>" + 
+"Average Marks = " + average + "<br>" + 
+"Grade = " + grade; 
+} 
+</script> 
+</body> 
+</html>
