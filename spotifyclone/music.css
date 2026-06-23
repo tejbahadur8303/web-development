@@ -1,0 +1,791 @@
+/* ============================================================
+   spotify.css  —  Full styles for the Spotify Clone
+   ============================================================ */
+
+/* ── BASE ── */
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background-color: black;
+  color: #fff;
+  overflow: hidden;
+  padding-bottom: 90px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ── LAYOUT ── */
+.main {
+  display: flex;
+  height: 100vh;
+  padding: 0.5rem;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  background-color: black;
+  width: 300px;
+  border-radius: 1rem;
+  margin-right: 0.6rem;
+}
+
+.nav {
+  background-color: #121212;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  padding: 0.5rem 0.75rem;
+}
+
+.nav-option {
+  line-height: 1.5rem;
+  opacity: 0.7;
+  padding: 0.5rem;
+}
+.nav-option:hover {
+  opacity: 1;
+}
+.nav-option i {
+  font-size: 1.25rem;
+}
+.nav-option a {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.library {
+  background-color: #121212;
+  border-radius: 1rem;
+  height: calc(100% - 116px);
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  overflow: hidden;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lib-option {
+  line-height: 1.5rem;
+  opacity: 0.7;
+  padding: 0.5rem;
+}
+
+.icons {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin: 10.7px;
+}
+
+.lib-box {
+  margin-top: 0.5rem;
+}
+
+.box {
+  height: 7rem;
+  background-color: #232323;
+  border-radius: 1rem;
+  margin: 0.75rem 0;
+  padding: 0.75rem 1rem;
+}
+.box2 {
+  height: 9rem;
+  background-color: #232323;
+  border-radius: 1rem;
+  margin: 0.75rem 0;
+  padding: 0.75rem 1rem;
+}
+
+.box-p1 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.box-p2 {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.badge {
+  background-color: white;
+  border: none;
+  border-radius: 100px;
+  color: black;
+  padding: 0.25rem 1rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  height: 2rem;
+  opacity: 0.78;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+.badge:hover {
+  opacity: 1;
+}
+
+/* ── MAIN CONTENT ── */
+.main-content {
+  background-color: black;
+  flex: 1;
+  overflow: auto;
+  padding: 0 1.5rem 2rem 1.5rem;
+}
+
+/* Sticky top nav */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background-color: #121212;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-icons {
+  margin-left: 0.75rem;
+}
+.nav-item {
+  margin-right: 1rem;
+}
+
+.dark-badge {
+  background-color: #000;
+  color: #fff;
+}
+
+@media (max-width: 1000px) {
+  .hide {
+    display: none;
+  }
+}
+
+/* ── CARDS ── */
+.card {
+  background-color: #232323;
+  width: 150px;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition:
+    box-shadow 0.2s,
+    border 0.2s;
+}
+.card:hover {
+  box-shadow: 10px 10px 10px dimgray;
+  font-weight: 500;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-tittle {
+  font-weight: 600;
+}
+.card-info {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* ============================================================
+   PLAYER BAR  —  Spotify-style fixed bottom bar
+   ============================================================ */
+.player-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: #181818;
+  border-top: 1px solid #282828;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 1000;
+  gap: 10px;
+}
+
+/* ── LEFT: now playing info ── */
+.pb-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 180px;
+  width: 30%;
+}
+
+.pb-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  object-fit: cover;
+  background: #282828;
+  flex-shrink: 0;
+}
+
+.pb-meta {
+  overflow: hidden;
+}
+
+.pb-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.pb-artist {
+  font-size: 0.72rem;
+  color: #b3b3b3;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+#like {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition:
+    color 0.15s,
+    transform 0.1s;
+  flex-shrink: 0;
+}
+#like:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+#like.liked {
+  color: #1db954;
+}
+
+/* ── CENTRE: controls + progress ── */
+.pb-centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  max-width: 540px;
+}
+
+.pb-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.pb-controls div {
+  cursor: pointer;
+  color: #b3b3b3;
+  font-size: 1rem;
+  transition:
+    color 0.15s,
+    transform 0.1s;
+}
+.pb-controls div:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+.pb-controls div.toggled {
+  color: #1db954;
+}
+
+/* big play/pause button */
+#play {
+  background: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000 !important;
+  font-size: 0.85rem !important;
+  flex-shrink: 0;
+  transition:
+    transform 0.1s,
+    background 0.15s !important;
+}
+#play:hover {
+  background: #e0e0e0 !important;
+  transform: scale(1.06) !important;
+}
+
+/* progress row */
+.pb-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.pb-time {
+  font-size: 0.68rem;
+  color: #b3b3b3;
+  width: 34px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.progress-track {
+  flex: 1;
+  height: 4px;
+  background: #535353;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+  transition: height 0.15s;
+}
+.progress-track:hover {
+  height: 6px;
+}
+.progress-track:hover #progressDot {
+  opacity: 1;
+}
+
+#progressFill {
+  height: 100%;
+  background: #b3b3b3;
+  border-radius: 2px;
+  width: 0%;
+  pointer-events: none;
+  transition: background 0.15s;
+}
+.progress-track:hover #progressFill {
+  background: #1db954;
+}
+
+#progressDot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+/* ── RIGHT: volume ── */
+.pb-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 140px;
+  width: 25%;
+  justify-content: flex-end;
+}
+
+#mute {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.15s;
+}
+#mute:hover {
+  color: #fff;
+}
+
+#volumeBar {
+  width: 80px;
+  height: 4px;
+  background: #535353;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+  transition: height 0.15s;
+}
+#volumeBar:hover {
+  height: 6px;
+}
+
+#volumeFill {
+  height: 100%;
+  background: #b3b3b3;
+  border-radius: 2px;
+  width: 70%;
+  pointer-events: none;
+}
+#volumeBar:hover #volumeFill {
+  background: #1db954;
+}
+
+/* extra right icons */
+.pb-extra {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pb-extra i {
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.pb-extra i:hover {
+  color: #fff;
+}
+/* ============================================================
+   ADDITIONS — Search bar + Slide-in Detail Panel
+   Append this entire block to the end of your existing music.css
+   ============================================================ */
+
+/* ── SEARCH BAR (sits in the sticky-nav) ── */
+.search-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 420px;
+  margin: 0 1.5rem;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #1f1f1f;
+  border: 1px solid #2a2a2a;
+  border-radius: 500px;
+  padding: 0.55rem 1rem;
+  gap: 10px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.search-box:focus-within {
+  background: #2a2a2a;
+  border-color: #535353;
+}
+
+.search-box i.fa-magnifying-glass {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  width: 100%;
+}
+.search-box input::placeholder {
+  color: #b3b3b3;
+}
+
+.search-clear {
+  display: none;
+  cursor: pointer;
+  color: #b3b3b3;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+.search-clear:hover {
+  color: #fff;
+}
+
+/* dropdown results */
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  max-height: 360px;
+  overflow-y: auto;
+  display: none;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  z-index: 200;
+}
+.search-results.open {
+  display: block;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.6rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.search-item:hover {
+  background: #282828;
+}
+
+.search-item-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+  background: #282828;
+  flex-shrink: 0;
+}
+
+.search-item-meta {
+  flex: 1;
+  overflow: hidden;
+}
+
+.search-item-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-item-artist {
+  font-size: 0.75rem;
+  color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-item-play {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+.search-item:hover .search-item-play {
+  color: #1db954;
+}
+
+.search-empty {
+  padding: 1rem;
+  color: #b3b3b3;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ── DETAIL PANEL (slide-in over current page) ── */
+.detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 900;
+}
+.detail-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.detail-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 420px;
+  max-width: 90vw;
+  background: linear-gradient(180deg, #2a2a2a 0%, #121212 280px);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 950;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+.detail-panel.open {
+  transform: translateX(0);
+}
+
+.detail-close {
+  align-self: flex-end;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.detail-close:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.detail-art {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #282828;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  margin-top: 1.5rem;
+}
+
+.detail-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 1.5rem;
+  line-height: 1.25;
+}
+
+.detail-artist {
+  font-size: 0.95rem;
+  color: #b3b3b3;
+  margin-top: 0.4rem;
+}
+
+.detail-playbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 2rem;
+}
+
+.detail-play-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1db954;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #000;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  transition: transform 0.1s, background 0.15s;
+  border: none;
+}
+.detail-play-btn:hover {
+  background: #1ed760;
+  transform: scale(1.05);
+}
+
+.detail-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.detail-time {
+  font-size: 0.7rem;
+  color: #b3b3b3;
+  width: 32px;
+  flex-shrink: 0;
+}
+.detail-time.end {
+  text-align: right;
+}
+
+.detail-progress-track {
+  flex: 1;
+  height: 4px;
+  background: #4d4d4d;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+.detail-progress-track:hover {
+  height: 6px;
+}
+
+.detail-progress-fill {
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+  width: 0%;
+  pointer-events: none;
+}
+
+.detail-progress-dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.detail-meta-box {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #2a2a2a;
+}
+
+.detail-meta-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #b3b3b3;
+  margin-bottom: 0.5rem;
+}
+
+.detail-meta-text {
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* prevent background scroll when panel is open (mobile-friendly) */
+body.panel-open {
+  overflow: hidden;
+}
+
+/* responsive: full-width panel on small screens */
+@media (max-width: 600px) {
+  .detail-panel {
+    width: 100vw;
+    max-width: 100vw;
+  }
+  .search-wrap {
+    max-width: 100%;
+    margin: 0 0.5rem;
+  }
+}

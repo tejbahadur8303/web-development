@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="logo.png" />
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="music.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <!-- ══════════ SIDEBAR ══════════ -->
+      <div class="sidebar">
+        <div class="nav">
+          <div class="nav-option" style="opacity: 1">
+            <i class="fa-solid fa-house"></i>
+            <a href="#">Home</a>
+          </div>
+          <div class="nav-option">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="#">Search</a>
+          </div>
+        </div>
+
+        <div class="library">
+          <div class="option">
+            <div class="lib-option nav-option">
+              <img src="library_icon.png" height="12px" width="11px" />
+              <a href="#">Your Library</a>
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="lib-box">
+            <div class="box">
+              <p class="box-p1">Create your first playlist</p>
+              <p class="box-p2">It's easy, we'll help you</p>
+              <button class="badge">Create playlist</button>
+            </div>
+            <div class="box2">
+              <p class="box-p1">Let's find some podcasts to follow</p>
+              <p class="box-p2">We'll keep you updated on new episodes</p>
+              <button class="badge">Browse podcasts</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ MAIN CONTENT ══════════ -->
+      <div class="main-content">
+        <div class="sticky-nav">
+          <div class="nav-icons">
+            <img src="backward_icon.png" />
+            <img src="forward_icon.png" class="hide" />
+          </div>
+
+          <!-- ══ SEARCH BAR ══ -->
+          <div class="search-wrap" id="searchWrap">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search songs or artists..."
+                autocomplete="off"
+              />
+              <i class="fa-solid fa-xmark search-clear" id="searchClear"></i>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+
+          <div class="download">
+            <button class="badge nav-item">Explore Premium</button>
+            <button class="badge nav-item dark-badge">
+              <i
+                class="fa-solid fa-circle-arrow-down"
+                style="margin-right: 10px"
+              ></i
+              >Install App
+            </button>
+            <i class="fa-solid fa-user nav-item"></i>
+          </div>
+        </div>
+
+        <h2>Recently Played</h2>
+        <div class="card-container">
+          <div class="card" data-track-id="0">
+            <img src="spotify.images/card1img.jpeg" class="card-img" />
+            <p class="card-tittle">Top 50 - Global</p>
+            <p class="card-info">Your daily updates of the most played...</p>
+          </div>
+        </div>
+
+        <h2>Recommended Station</h2>
+        <div class="cards-container">
+          <div class="card" data-track-id="1">
+            <img src="card2img.jpeg" class="card-img" />
+            <p class="card-tittle">Karan Aujla</p>
+            <p class="card-info">Winning Speech, Girlfriend</p>
+          </div>
+          <div class="card" data-track-id="2">
+            <img src="card3img.jpeg" class="card-img" />
+            <p class="card-tittle">Barbad (Saiyaara)</p>
+            <p class="card-info">Sachin-Jigar, Aditya Rikhari</p>
+          </div>
+          <div class="card" data-track-id="3">
+            <img src="spotify.images/card4img.jpeg" class="card-img" />
+            <p class="card-tittle">Mann Mera</p>
+            <p class="card-info">Aditya Rikhari, Faheem, Abdullah</p>
+          </div>
+          <div class="card" data-track-id="4">
+            <img src="spotify.images/card5img.jpeg" class="card-img" />
+            <p class="card-tittle">Vishal Mishra</p>
+            <p class="card-info">Atif Aslam, Sachet Parampara Tandon</p>
+          </div>
+          <div class="card" data-track-id="5">
+            <img src="spotify.images/card6img.jpeg" class="card-img" />
+            <p class="card-tittle">AP Dhillon</p>
+            <p class="card-info">Karan Aujla, Yo Yo Honey Singh</p>
+          </div>
+        </div>
+
+        <h2>Discover picks for you</h2>
+        <div class="cards-container">
+          <div class="card" data-track-id="6">
+            <img src="i1.jpg" class="card-img" />
+            <p class="card-tittle">Guru Randhawa</p>
+            <p class="card-info">Your daily updates of the most played...</p>
+          </div>
+          <div class="card" data-track-id="7">
+            <img src="i3.jpg" class="card-img" />
+            <p class="card-tittle">Deevaniyat</p>
+            <p class="card-info">Vishal Mishra, Koushik-Guddu, Kunaal</p>
+          </div>
+          <div class="card" data-track-id="8">
+            <img src="i4.jpeg" class="card-img" />
+            <p class="card-tittle">Saiyaara</p>
+            <p class="card-info">Tanishk Bagchi, Vishal Mishra...</p>
+          </div>
+          <div class="card" data-track-id="9">
+            <img src="i5.jpeg" class="card-img" />
+            <p class="card-tittle">Hasseen</p>
+            <p class="card-info">Talwinder, NDS, Rippy Grewal...</p>
+          </div>
+          <div class="card" data-track-id="10">
+            <img src="i6.jpeg" class="card-img" />
+            <p class="card-tittle">Fanaa</p>
+            <p class="card-info">Sevanshi...</p>
+          </div>
+        </div>
+
+        <h2>More of what you like</h2>
+        <div class="cards-container">
+          <div class="card" data-track-id="11">
+            <img src="i7.jpeg.webp" class="card-img" />
+            <p class="card-tittle">Best Bollywood 2025</p>
+            <p class="card-info">Arijit Singh, Pritam, Sachin-Jigar...</p>
+          </div>
+          <div class="card" data-track-id="12">
+            <img src="hq720-2.jpg" class="card-img" />
+            <p class="card-tittle">Bollywood &amp; Chill</p>
+            <p class="card-info">AR Rahman, Sachin-Jigar...</p>
+          </div>
+          <div class="card" data-track-id="13">
+            <img src="i8.jpeg" class="card-img" />
+            <p class="card-tittle">Hollywood Vibes</p>
+            <p class="card-info">Karan Aujla, Arijit Singh, AP Dhillon...</p>
+          </div>
+          <div class="card" data-track-id="14">
+            <img src="i9.jpeg" class="card-img" />
+            <p class="card-tittle">Top 100 Haryanavi</p>
+            <p class="card-info">Masoom Sharma, Dhanda Nyoliwala...</p>
+          </div>
+          <div class="card" data-track-id="15">
+            <img src="i10.jpeg" class="card-img" />
+            <p class="card-tittle">Desi Hits</p>
+            <p class="card-info">AP Dhillon, Karan Aujla...</p>
+          </div>
+        </div>
+
+        <h2>Trending Valentine's Hits</h2>
+        <div class="cards-container">
+          <div class="card" data-track-id="16">
+            <img src="i11.jpeg" class="card-img" />
+            <p class="card-tittle">Bekhayali</p>
+            <p class="card-info">Sachet Tandon, Sachet-Parampara...</p>
+          </div>
+          <div class="card" data-track-id="17">
+            <img src="i12.jpeg" class="card-img" />
+            <p class="card-tittle">Chai Classics</p>
+            <p class="card-info">Kishore Kumar, Lata Mangeshkar...</p>
+          </div>
+          <div class="card" data-track-id="18">
+            <img src="i13.jpeg" class="card-img" />
+            <p class="card-tittle">70's Love Hits</p>
+            <p class="card-info">
+              Kishore Kumar, Lata Mangeshkar, Asha Bhosle...
+            </p>
+          </div>
+          <div class="card" data-track-id="19">
+            <img src="i14.jpeg" class="card-img" />
+            <p class="card-tittle">Soch Na Sake</p>
+            <p class="card-info">Arijit Singh, Amaal Mallik...</p>
+          </div>
+          <div class="card" data-track-id="20">
+            <img src="i15.jpeg" class="card-img" />
+            <p class="card-tittle">Lover</p>
+            <p class="card-info">Diljit Dosanjh</p>
+          </div>
+        </div>
+
+        <h2>Punjabi Superstars</h2>
+        <div class="cards-container">
+          <div class="card" data-track-id="21">
+            <img src="card3img.jpeg" class="card-img" />
+            <p class="card-tittle">G.O.A.T.</p>
+            <p class="card-info">Diljit Dosanjh</p>
+          </div>
+          <div class="card" data-track-id="22">
+            <img src="card4img.jpeg" class="card-img" />
+            <p class="card-tittle">Bijlee Bijlee</p>
+            <p class="card-info">Harrdy Sandhu</p>
+          </div>
+          <div class="card" data-track-id="5">
+            <img src="card6img.jpeg" class="card-img" />
+            <p class="card-tittle">Excuses</p>
+            <p class="card-info">AP Dhillon, Karan Aujla</p>
+          </div>
+          <div class="card" data-track-id="1">
+            <img src="card2img.jpeg" class="card-img" />
+            <p class="card-tittle">Winning Speech</p>
+            <p class="card-info">Karan Aujla</p>
+          </div>
+        </div>
+
+        <h2>Romantic Voices</h2>
+        <div class="cards-container">
+          <div class="card" data-track-id="23">
+            <img src="card5img.jpeg" class="card-img" />
+            <p class="card-tittle">Naina</p>
+            <p class="card-info">Armaan Malik</p>
+          </div>
+          <div class="card" data-track-id="24">
+            <img src="card6img.jpeg" class="card-img" />
+            <p class="card-tittle">Wajah Tum Ho</p>
+            <p class="card-info">Armaan Malik</p>
+          </div>
+          <div class="card" data-track-id="25">
+            <img src="i1.jpg" class="card-img" />
+            <p class="card-tittle">Param Sundari</p>
+            <p class="card-info">Sona Mohapatra, Shreya Ghoshal</p>
+          </div>
+          <div class="card" data-track-id="26">
+            <img src="i3.jpg" class="card-img" />
+            <p class="card-tittle">Ambarsariya</p>
+            <p class="card-info">Sona Mohapatra</p>
+          </div>
+        </div>
+
+        <br /><br /><br />
+      </div>
+      <!-- /main-content -->
+    </div>
+    <!-- /main -->
+
+    <!-- ══════════════════════════════════════════
+       SLIDE-IN DETAIL PANEL
+       ══════════════════════════════════════════ -->
+    <div class="detail-overlay" id="detailOverlay"></div>
+    <div class="detail-panel" id="detailPanel">
+      <div class="detail-close" id="detailClose">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+
+      <img id="detailImg" class="detail-art" src="" alt="cover" />
+
+      <div class="detail-title" id="detailTitle">Select a song</div>
+      <div class="detail-artist" id="detailArtist">—</div>
+
+      <div class="detail-playbar">
+        <button class="detail-play-btn" id="detailPlayBtn">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <div class="detail-progress-row">
+          <span class="detail-time" id="detailCurrentTime">0:00</span>
+          <div class="detail-progress-track" id="detailProgress">
+            <div class="detail-progress-fill" id="detailProgressFill"></div>
+            <div class="detail-progress-dot" id="detailProgressDot"></div>
+          </div>
+          <span class="detail-time end" id="detailTotalTime">0:00</span>
+        </div>
+      </div>
+
+      <div class="detail-meta-box">
+        <div class="detail-meta-label">About this track</div>
+        <div class="detail-meta-text">
+          Playing now from your library. Use the controls above or the
+          player bar below to play, pause, and seek.
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+       PLAYER BAR
+       ══════════════════════════════════════════ -->
+    <div class="player-bar">
+      <!-- LEFT: now playing -->
+      <div class="pb-left">
+        <img
+          id="nowImg"
+          class="pb-thumb"
+          src=""
+          alt="cover"
+          style="display: none"
+        />
+        <div class="pb-meta">
+          <div class="pb-title" id="nowTitle">Select a song</div>
+          <div class="pb-artist" id="nowArtist">—</div>
+        </div>
+        <button id="like" title="Save to Liked Songs">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+      </div>
+
+      <!-- CENTRE: controls + seek bar -->
+      <div class="pb-centre">
+        <div class="pb-controls">
+          <div id="shuffle" title="Shuffle">
+            <i class="fa-solid fa-shuffle"></i>
+          </div>
+          <div id="prev" title="Previous">
+            <i class="fa-solid fa-backward-step"></i>
+          </div>
+          <div id="play" title="Play / Pause">
+            <i class="fa-solid fa-play"></i>
+          </div>
+          <div id="next" title="Next">
+            <i class="fa-solid fa-forward-step"></i>
+          </div>
+          <div id="repeat" title="Repeat">
+            <i class="fa-solid fa-repeat"></i>
+          </div>
+        </div>
+        <div class="pb-progress">
+          <span class="pb-time" id="currentTime">0:00</span>
+          <div class="progress-track" id="progressBar">
+            <div id="progressFill"></div>
+            <div id="progressDot"></div>
+          </div>
+          <span class="pb-time" id="totalTime">0:00</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: volume -->
+      <div class="pb-right">
+        <div class="pb-extra">
+          <i class="fa-solid fa-list-ul" title="Queue"></i>
+          <i class="fa-solid fa-maximize" title="Full screen"></i>
+        </div>
+        <button id="mute" title="Mute / Unmute">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <div id="volumeBar">
+          <div id="volumeFill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- hidden audio element -->
+    <audio id="audioPlayer"></audio>
+
+    <script src="music.js"></script>
+  </body>
+</html>
