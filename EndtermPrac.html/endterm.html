@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Number Checker</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 350px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      input {
+        width: 90%;
+        padding: 10px;
+        font-size: 18px;
+        margin: 15px 0;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Prime Number Checker</h2>
+
+      <input type="number" id="number" placeholder="Enter a number" />
+
+      <br />
+
+      <button onclick="checkPrime()">Check</button>
+
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function checkPrime() {
+        let num = parseInt(document.getElementById("number").value);
+        let result = document.getElementById("result");
+
+        if (isNaN(num)) {
+          result.innerHTML = "Please enter a valid number.";
+          result.style.color = "red";
+          return;
+        }
+
+        if (num <= 1) {
+          result.innerHTML = num + " is not a Prime Number.";
+          result.style.color = "red";
+          return;
+        }
+
+        let isPrime = true;
+
+        // Loop to check prime number
+        for (let i = 2; i < num; i++) {
+          if (num % i === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+
+        if (isPrime) {
+          result.innerHTML = num + " is a Prime Number.";
+          result.style.color = "green";
+        } else {
+          result.innerHTML = num + " is not a Prime Number.";
+          result.style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>
